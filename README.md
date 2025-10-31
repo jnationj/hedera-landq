@@ -328,7 +328,7 @@ Then open [http://localhost:8080](http://localhost:8080).
 | **Blessing**    | Designer / Research     | 
 
 Hedera Certified ✅
-
+Hedera Certificate & Pitch Deck Slide
 LINK: https://drive.google.com/drive/folders/1sHvEe1kYWRNpWfMAeg8BjY0wnsr1VOPE?usp=sharing
 
 ---
