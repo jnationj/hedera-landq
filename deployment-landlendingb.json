@@ -1,0 +1,9 @@
+{
+  "network": "Testnet",
+  "deployedBy": "0.0.5165390",
+  "landNftEvmAddress": "0x00000000000000000000000000000000006d622a",
+  "landVerifierEvmAddress": "0x00000000000000000000000000000000006d625d",
+  "landLendingContractId": "0.0.7168642",
+  "landLendingEvmAddress": "00000000000000000000000000000000006d6282",
+  "timestamp": "2025-10-31T14:35:51.602Z"
+}

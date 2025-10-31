@@ -1,0 +1,50 @@
+{
+  "name": "hederaair",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "deploy:nftb": "ts-node --project tsconfig.json scripts/deployLandNFTb.ts",
+    "compile:landnftb": "npx solc --bin --abi --include-path node_modules/ --base-path . -o contracts/build contracts/LandNFTb.sol",    
+    "mint:landnftb": "ts-node --project tsconfig.json scripts/mintLandNFTb.ts",
+    "link:LendingToNFT": "ts-node scripts/linkLendingToNFT.ts",
+    "check:LandNFTOwner": "ts-node scripts/checkLandNFTOwner.ts",
+    "assign:Verifier": "ts-node scripts/assignVerifiers.ts",
+    "compile:landverifierb": "npx solc --bin --abi --include-path node_modules/ --base-path . -o contracts/build contracts/LandVerifierb.sol",
+    "compile:landLendingb": "npx solc --bin --abi --include-path node_modules/ --base-path . -o contracts/build contracts/LandLendingb.sol",
+    "deploy:landlendingb": "ts-node --project tsconfig.json scripts/deployLandLendingb.ts",
+    "deploy:landverifierb": "ts-node --project tsconfig.json scripts/deployLandVerifierb.ts",
+    "clean:contracts": "rm -rf contracts/build && mkdir -p contracts/build",
+    "test:landnft": "ts-node --project tsconfig.json scripts/testLandNFTFlow.ts"
+  },
+  "dependencies": {
+    "@hashgraph/sdk": "^2.40.0",
+    "@openzeppelin/contracts": "^5.0.1",
+    "@reduxjs/toolkit": "^2.8.2",
+    "bignumber.js": "^9.3.0",
+    "buffer": "^6.0.3",
+    "dotenv": "^16.5.0",
+    "hashconnect": "^3.0.13",
+    "next": "14.1.0",
+    "process": "^0.11.10",
+    "react": "^18",
+    "react-dom": "^18",
+    "react-redux": "^9.2.0",
+    "solc": "^0.8.24"
+  },
+  "devDependencies": {
+    "@types/node": "^20.19.1",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "autoprefixer": "^10.0.1",
+    "eslint": "^8",
+    "eslint-config-next": "14.1.0",
+    "postcss": "^8",
+    "tailwindcss": "^3.3.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
+  }
+}
