@@ -323,9 +323,9 @@ Then open [http://localhost:8080](http://localhost:8080).
 
 | Name            | Role                    | 
 | --------------- | ----------------------- | 
-| [Joseph]        | Lead Developer          | 
-| [Charity]       | Marketing Social/Media  | 
-| [Blessing]      | Designer / Research     | 
+| **Joseph**      | Lead Developer          | 
+| **Charity**     | Marketing Social/Media  | 
+| **Blessing**    | Designer / Research     | 
 
 Hedera Certified ✅
 
