@@ -1,6 +1,5 @@
-# Nosana Builders Challenge: Agent-101
+# LandQ AI Agent
 
-![Agent-101](./assets/NosanaBuildersChallengeAgents.jpg)
 
 ---
 
@@ -388,3 +387,4 @@ The agent will:
 ---
 
 Short video demo 4mins: https://youtu.be/epZ8IRD0J3Y
+
