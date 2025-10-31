@@ -327,17 +327,17 @@ Then open [http://localhost:8080](http://localhost:8080).
 | **Charity**     | Marketing Social/Media  | 
 | **Blessing**    | Designer / Research     | 
 
-Hedera Certified ✅
-Hedera Certificate & Pitch Deck Slide
+Hedera Certified ✅  
+Hedera Certificate & Pitch Deck Slide  
 LINK: https://drive.google.com/drive/folders/1sHvEe1kYWRNpWfMAeg8BjY0wnsr1VOPE?usp=sharing
 
 ---
 
 ### 📬 Contact
 
-For collaboration, partnerships, or inquiries:
-**Name:** [Your Full Name or Team Name]
-**Email:** [0xlandq@gmail.com](mailto:0xlandq@gmail.com)]
+For collaboration, partnerships, or inquiries:  
+**Name:** [Team Awesome]  
+**Email:** [0xlandq@gmail.com](mailto:0xlandq@gmail.com)]  
 **X:** [[https://x.com/0xLandQ](https://x.com/0xLandQ)]
 
 ---
