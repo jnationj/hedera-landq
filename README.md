@@ -144,15 +144,6 @@ Analyzes tokenized land NFTs using LLMs and geospatial APIs to generate actionab
 
 ---
 
-## 🧭 **Roadmap**
-
-**Phase 1 – Contracts & Testnet (✅ Done)**
-**Phase 2 – DApp MVP (✅ Done)**
-**Phase 3 – Marketplace & Lending Pools (1–2 Months)**
-**Phase 4 – Regional Expansion (3–4 Months)**
-**Phase 5 – DAO & Cross-chain (5+ Months)**
-
----
 
 ## 📦 **Setup Instructions**
 
@@ -263,19 +254,23 @@ Then open [http://localhost:8080](http://localhost:8080).
 
 ## 🧩 **Milestones for Hedera Africa Hackathon**
 
-## 📈 Roadmap
 
-| Phase | Milestone                                   | Status |
-| ----- | ------------------------------------------- | ------ |
-| 1     | Smart Contract Deployment on Hedera Testnet | ✅     |
-| 2     | Full DApp MVP (Mint, Verify, Loan)          | ✅     |
-| 3     | Land NFT Marketplace + Lending Pools        | 🔜     |
-| 4     | Regional Registry Partnerships              | 🔜     |
-| 5     | DAO Governance & Cross-Chain Expansion      | 🔜     |
+## 🧭 **Roadmap**
+
+| **Phase**                                          | **Timeline** | **Description**                                                                                                                                                                          | **Status** |
+| -------------------------------------------------- | ------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- |
+| **Phase 1 – Smart Contracts & Testnet Deployment** | ✅ Completed  | Developed and deployed `LandNFT`, `LandVerifier`, and `LandLending` contracts on Hedera Testnet. Integrated IPFS for metadata storage.                                                   | ✅ Done     |
+| **Phase 2 – DApp MVP (Core Features)**             | ✅ Completed  | Built functional frontend with MetaMask integration, NFT minting, ownership dashboard, and on-chain verification flow. Live Hedera interactions via Mirror Node.                         | ✅ Done     |
+| **Phase 3 – Marketplace & Lending Pools**          | 1–2 Months   | Launch peer-to-peer land NFT marketplace and liquidity pools for verified land-backed lending. Add real-time price oracles and integrate HBAR-Fi staking.                                | ⏳ Upcoming |
+| **Phase 4 – Regional Expansion & Partnerships**    | 3–4 Months   | Partner with government land registries and verification agencies across African regions. Recruit certified verifiers and expand language/localization support.                          | 🔜 Planned |
+| **Phase 5 – DAO Governance & Cross-Chain Launch**  | 5+ Months    | Establish the LandQ DAO for decentralized governance. Enable multi-chain interoperability (EVM chains) with Hedera as the settlement hub. Incentivize liquidity providers and verifiers. | 🚀 Future  |
+
+
+
 
 ---
 
-## 👥 **Team LandQ**
+## 👥 **Team Awesome**
 
 | Name            | Role                    | 
 | --------------- | ----------------------- | 
