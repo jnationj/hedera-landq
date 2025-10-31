@@ -336,9 +336,9 @@ LINK: https://drive.google.com/drive/folders/1sHvEe1kYWRNpWfMAeg8BjY0wnsr1VOPE?u
 ### 📬 Contact
 
 For collaboration, partnerships, or inquiries:  
-**Name:** [Team Awesome]  
-**Email:** [0xlandq@gmail.com](mailto:0xlandq@gmail.com)]  
-**X:** [[https://x.com/0xLandQ](https://x.com/0xLandQ)]
+**Name:** Team Awesome  
+**Email:** [0xlandq@gmail.com](mailto:0xlandq@gmail.com)  
+**X:** [https://x.com/0xLandQ](https://x.com/0xLandQ)
 
 ---
 
