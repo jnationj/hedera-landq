@@ -235,9 +235,10 @@ PINATA_JWT=
 ```bash
 cd Contract
 npm install
-npx hardhat compile
-npx hardhat run scripts/deploy.js --network hedera
+npm run compile:landndtb
 ```
+  
+More Details on the Contract readme
 
 Ensure environment variables for Hedera EVM wallet are set.
 
