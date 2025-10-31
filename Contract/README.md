@@ -214,6 +214,12 @@ npm run mint:landnftb
 npm run assign:Verifier
 npm run test:landnft
 ```
+![LandNFT Deployment Screenshot](./images/LandNFT.jpg)  
+
+![LandVerifier Deployment Screenshot](./images/LandVerifier.jpg)  
+
+![LandLending Deployment Screenshot](./images/LandLending.jpg)
+
 ```
 
 ### Configuration Files
