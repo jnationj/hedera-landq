@@ -235,7 +235,7 @@ PINATA_JWT=
 ```bash
 cd Contract
 npm install
-npm run compile:landndtb
+npm run compile:landnftb
 ```
   
 More Details on the Contract readme
