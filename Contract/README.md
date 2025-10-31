@@ -167,19 +167,60 @@ Standard Hedera response codes (e.g., `SUCCESS = 22`, `INVALID_TOKEN_ID`, etc.)
 * Hedera Testnet Account
 * HBAR balance for gas fees
 
-### Deployment Commands
+### Compile & Deployment Commands
 
 ```bash
-npx hardhat run scripts/deployLandNFT.ts --network testnet
-npx hardhat run scripts/deployLandVerifier.ts --network testnet
-npx hardhat run scripts/deployLandLending.ts --network testnet
+Perfect — here’s how you can present your **Basic Commands Reference** section neatly in your `README.md` so it looks professional and helps judges/developers navigate your repo easily 👇
+
+---
+
+## ⚙️ Basic Commands Reference
+
+Below are the main scripts and commands used for compiling, deploying, linking, and testing the **LandQ smart contracts** on the Hedera Testnet.
+Each command can be run using `npm run <command>` or `pnpm <command>`.
+
+| **Command**             | **Description**                                                              |
+| ----------------------- | ---------------------------------------------------------------------------- |                  
+| `compile:landnftb`      | Compiles the `LandNFTb.sol` smart contract, generating ABI and binary files. |
+| `compile:landverifierb` | Compiles the `LandVerifierb.sol` verification contract.                      |
+| `compile:landLendingb`  | Compiles the `LandLendingb.sol` lending contract.                            |
+| `deploy:nftb`           | Deploys the LandNFT contract to Hedera Testnet.                              |
+| `deploy:landverifierb`  | Deploys the LandVerifier contract to Hedera Testnet.                         |
+| `deploy:landlendingb`   | Deploys the LandLending contract to Hedera Testnet.                          |
+| `link:LendingToNFT`     | Links the deployed LandLending contract to LandNFT for collateralization.    |
+| `mint:landnftb`         | Mints a new Land NFT using IPFS metadata.                                    |
+| `check:LandNFTOwner`    | Verifies ownership of a specific Land NFT on-chain.                          |
+| `assign:Verifier`       | Assigns a new authorized verifier (e.g., government registry).               |
+| `test:landnft`          | Runs an end-to-end test of the LandNFT minting and verification flow.        |
+
+---
+
+### 💻 Example Usage
+
+```bash
+# Compile all contracts
+
+npm run compile:landnftb
+npm run compile:landverifierb
+npm run compile:landLendingb
+
+# Deploy contracts on Hedera Testnet
+npm run deploy:nftb
+npm run deploy:landverifierb
+npm run deploy:landlendingb
+
+# Mint and verify a land NFT
+npm run mint:landnftb
+npm run assign:Verifier
+npm run test:landnft
+```
 ```
 
 ### Configuration Files
 
 * `deployment-nft.json` — LandNFT deployment details
-* `verifier-deploy.json` — LandVerifier deployment info
-* `lending-deploy.json` — LandLending deployment info
+* `deployment-verifiera.json` — LandVerifier deployment info
+* `deployment-lendingb.json` — LandLending deployment info
 
 ---
 
