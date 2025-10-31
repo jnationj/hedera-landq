@@ -1,8 +1,44 @@
 # 🏡 **LandQ: Decentralized Land Ownership, Verification & Lending on Hedera**
 
+**LandQ** is a decentralized platform that transforms **physical land ownership into NFTs**, provides **on-chain verification**, and enables **land-backed lending** through DeFi — all built on **Hedera Hashgraph**.
+
+It combines:
+
+* Smart contracts for **Land NFT minting, verification, and lending**
+* **Hedera HTS and HSCS** for low-cost, transparent operations
+* A **React/Next.js frontend** for user interaction
+* An **AI Land Intelligence Agent** for on-chain data analysis and real-world land insights
+
+---
+
+## 🌍 Why Hedera for LandQ
+
+LandQ builds on **Hedera Hashgraph** because it uniquely combines **public transparency** with **enterprise-grade governance** — essential for real-world, government-integrated systems like land registries.
+
+| Feature                                     | Why It Matters for LandQ                                                                                                                                                                                                |
+| ------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 🏛️ **Government-Friendly Governance**      | Hedera’s Governing Council includes global enterprises and universities, providing regulatory confidence for government adoption — critical since **LandVerifiers** are often **state agencies or licensed surveyors**. |
+| 💰 **Predictable, Low Fees**                | Transactions cost a fraction of a cent — ideal for large-scale public registry operations and citizen access.                                                                                                           |
+| ⚡ **ABFT Finality**                         | Transactions are final in seconds, eliminating land title disputes and fraud.                                                                                                                                           |
+| 🌱 **Carbon-Negative Network**              | Complies with ESG frameworks; attractive for sustainable development agencies and green registries.                                                                                                                     |
+| 🧩 **HTS (Hedera Token Service)**           | Enables native NFT minting for land parcels without external gas fees or bridges.                                                                                                                                       |
+| 🔐 **HSCS (Hedera Smart Contract Service)** | EVM-compatible contracts handle land verification and lending logic securely.                                                                                                                                           |
+| 🌐 **Public Transparency via Mirror Nodes** | Governments and the public can audit transactions in real time, supporting accountability and anti-corruption goals.                                                                                                    |
+| 🤝 **Built-In Trust Layer**                 | Hedera’s permissionless yet enterprise-governed model bridges public and private stakeholders seamlessly.                                                                                                               |
+
+> 🏗️ **In essence:** Hedera is the ideal blockchain for *LandQ* because it blends the *efficiency of enterprise systems* with the *transparency of decentralized ledgers* — making it a credible foundation for national land governance.
+
+
+
 ### 🚀 Track: Onchain Finance & Real-World Assets (RWA)
 
 **Hedera Africa Hackathon 2025 Submission**
+
+Core Hedera integration lives in:
+
+* **Smart Contracts** — deployed on **Hedera Testnet**
+* **Frontend (Next.js)** — interacts with contracts via **viem/wagmi**
+* **AI Agent** — adds intelligence layer using **LLMs and geospatial APIs**
 
 ---
 
@@ -42,7 +78,29 @@ Frontend (Next.js + MetaMask) → Contracts (HTS + HSCS) → Hedera Network → 
 
 ---
 
-## 🧩 **Smart Contracts Summary**
+## 🧱 Smart Contracts Overview
+
+| **Contract Name**    | **Purpose**                                                    | **Key Functions**                                                     | **Hedera Integration**                                                   |
+| -------------------- | -------------------------------------------------------------- | --------------------------------------------------------------------- | ------------------------------------------------------------------------ |
+| **LandNFT.sol**      | Represents parcels of land as **HTS NFTs** with IPFS metadata. | `mintLandNFT()`, `transferLandNFT()`, `getLandMetadata()`             | Uses **HTS** for NFT minting and metadata linkage.                       |
+| **LandVerifier.sol** | Manages **on-chain verification requests**.                    | `requestVerification()`, `approveVerification()`, `getVerification()` | Uses **HSCS** for logic execution; verification is immutable and public. |
+| **LandLending.sol**  | Enables **land-backed DeFi lending**.                          | `createLoan()`, `repayLoan()`, `liquidateDefaultedLoan()`             | Integrates **HTS** for tokenized lending and repayments in USDT.         |
+
+---
+
+## 🧠 Land Intelligence AI Agent
+
+**Purpose:**
+Enhances decision-making for landowners, buyers, and lenders by providing **AI-driven insights** on tokenized land parcels.
+
+| **Capability**               | **Description**                                                  |
+| ---------------------------- | ---------------------------------------------------------------- |
+| Geospatial Overlap Detection | Detects if new land NFTs overlap existing ones on-chain.         |
+| Amenities Lookup             | Fetches nearby roads, schools, hospitals via OpenStreetMap.      |
+| Land Use Suggestion          | Suggests best land utilization (estate, commercial, farm, etc.). |
+| AI Report Generation         | Uses LLM (Qwen2.5) via Ollama for readable analysis reports.     |
+| Itinerary Builder            | Suggests on-site inspection routes based on key POIs.            |
+
 
 ### **LandNFT**
 
@@ -98,34 +156,86 @@ Analyzes tokenized land NFTs using LLMs and geospatial APIs to generate actionab
 
 ## 📦 **Setup Instructions**
 
-### Backend + Frontend
+### 1️⃣ Frontend Setup
 
 ```bash
 git clone https://github.com/yourname/landq-hedera.git
-cd landq-hedera
+cd landq-frontend
 npm install
 npm run dev
 ```
 
+Runs locally at **[http://localhost:3000](http://localhost:3000)**
+
 ### Environment Variables
 
+Edit `.env` with:
+
 ```env
-NEXT_PUBLIC_CONTRACT_ID=0.0.7160113
-NEXT_PUBLIC_VERIFIER_ID=0.0.xxxxxxx
-NEXT_PUBLIC_MIRROR_NODE_URL=https://testnet.mirrornode.hedera.com/api/v1
+NEXT_PUBLIC_LANDNFT_CONTRACT='0x00000000000000000000000000000000006d49c8'
+NEXT_PUBLIC_LAND_COLLECTION_ID=0.0.7162313
+
+# === FIREBASE CLIENT CONFIG ===
+NEXT_PUBLIC_FIREBASE_API_KEY=
+NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=
+NEXT_PUBLIC_FIREBASE_PROJECT_ID=
+NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=
+NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=
+NEXT_PUBLIC_FIREBASE_APP_ID=
+# === FIREBASE ADMIN SDK CONFIG ===
+FIREBASE_PROJECT_ID=
+FIREBASE_CLIENT_EMAIL=
+FIREBASE_PRIVATE_KEY=
+
+PINATA_JWT=
 ```
+
+### 2️⃣ Smart Contract Setup
+
+```bash
+cd Contract
+npm install
+npx hardhat compile
+npx hardhat run scripts/deploy.js --network hedera
+```
+
+Ensure environment variables for Hedera EVM wallet are set.
+
+```env
+OPERATOR_ID=0.0.5165390
+OPERATOR_KEY=3030020100300706052b8104000a042204xxxxx
+RECEIVER_ADDRESS=0x00000000000000000000000000000000004ed14e
+LANDNFT_CONTRACT_ADDRESS=0x00000000000000000000000000000000006d622a
+LANDVERIFIER_CONTRACT_ADDRESS=0x00000000000000000000000000000000006d625d
+LANDNFT_EVM_ADDRESS=0x00000000000000000000000000000000006d622a
+LANDVERIFIER_EVM_ADDRESS=0x00000000000000000000000000000000006d625d
+LANDNFT_CONTRACT_ID=0.0.7168554
+LANDLENDING_EVM_ADDRESS=00000000000000000000000000000000006d6282
+```
+
+Scripts for compiling and deploying you can find in package.json file
+
 
 ### AI Agent (optional)
 
 ```bash
-cd ai-agent
-docker build -t jnationj/agent-challenge:latest .
-docker run --env-file .env.docker -p 8080:8080 jnationj/agent-challenge:latest
+cd LandQ-ai-agent
+pnpm install
+pnpm run dev
 ```
 
 Then open [http://localhost:8080](http://localhost:8080).
 
 ---
+
+## 🪙 Hedera Feature Highlights in LandQ
+
+* HTS NFT minting for land ownership
+* HSCS smart contract execution for verification & lending
+* Mirror Node queries for transaction proof and transparency
+* IPFS integration for off-chain land metadata
+* Stablecoin (USDT) lending on Hedera
+
 
 ## 🧪 **Example Usage**
 
@@ -153,51 +263,39 @@ Then open [http://localhost:8080](http://localhost:8080).
 
 ## 🧩 **Milestones for Hedera Africa Hackathon**
 
-| Milestone | Description                              | Status      |
-| --------- | ---------------------------------------- | ----------- |
-| M1        | Working MVP DApp with mint, verify, loan | ✅ Completed |
-| M2        | Marketplace & Lending Pools              | ⏳ Next      |
-| M3        | Regional Registry Integrations           | 🚧 Planned  |
+## 📈 Roadmap
+
+| Phase | Milestone                                   | Status |
+| ----- | ------------------------------------------- | ------ |
+| 1     | Smart Contract Deployment on Hedera Testnet | ✅     |
+| 2     | Full DApp MVP (Mint, Verify, Loan)          | ✅     |
+| 3     | Land NFT Marketplace + Lending Pools        | 🔜     |
+| 4     | Regional Registry Partnerships              | 🔜     |
+| 5     | DAO Governance & Cross-Chain Expansion      | 🔜     |
 
 ---
 
 ## 👥 **Team LandQ**
 
-| Name            | Role                    | Contribution |
-| --------------- | ----------------------- | ------------ |
-| [Your Name]     | Lead Developer          | 50%          |
-| [Teammate Name] | Smart Contract Engineer | 25%          |
-| [Teammate Name] | Designer / Research     | 25%          |
+| Name            | Role                    | 
+| --------------- | ----------------------- | 
+| [Joseph]        | Lead Developer          | 
+| [Charity]       | Marketing Social/Media  | 
+| [Blessing]      | Designer / Research     | 
 
 Hedera Certified ✅
-Contact: [your email / LinkedIn]
+
+---
+
+### 📬 Contact
+
+For collaboration, partnerships, or inquiries:
+**Name:** [Your Full Name or Team Name]
+**Email:** [0xlandq@gmail.com](mailto:0xlandq@gmail.com)]
+**X:** [[https://x.com/0xLandQ](https://x.com/0xLandQ)]
 
 ---
 
 ## 🧾 **License**
 
 MIT License © 2025 LandQ
-
----
-
-## ✅ **Compliance Checklist**
-
-✅ Public GitHub Repo
-✅ Functional DApp w/ live Hedera transaction
-✅ README w/ setup + architecture
-✅ 3-min Demo Video + Pitch Deck
-✅ Team registered on DoraHacks
-
----
-
-If you confirm I can proceed to:
-
-1. 🧱 Format this into a ready-to-push `README.md`
-2. 🧾 Write the **DoraHacks BUIDL page submission text**
-3. 🎤 Prepare your **Pitch Deck (Google Slides / PDF)** from this summary
-
-Can you please confirm the following before I finalize?
-
-* ✅ Your deployed **LandVerifier** and **LandLending** contract IDs
-* ✅ Your **GitHub repo URL** (or “create new public repo”)
-* ✅ Your **YouTube/Vimeo video link**
